@@ -15,33 +15,38 @@ public class Main {
         System.out.println("Inserisci una parola:");
         String parolaUtente = scan.nextLine();
         char[] lettere = parolaUtente.toCharArray();
-         char[] lettereInverso = new char[lettere.length];
-         boolean IsThisPalindrome = false;
+        char[] lettereInverso = new char[lettere.length];
+        boolean IsThisPalindrome = false;
         System.out.println(Arrays.toString(lettere));
 
         for (int i = lettere.length - 1, j = 0; i >= 0; i--, j++) {
-          lettereInverso[j] = lettere[i];
+            lettereInverso[j] = lettere[i];
         }
-         for(int i = 0; i < lettere.length; i++){
-             if(lettereInverso[i] == lettere[i]){
-                 IsThisPalindrome = true;
-                 break;
-             }
-             else{
-                 IsThisPalindrome = false;
-                 break;
-             }
-         }
 
-         if(IsThisPalindrome){
-             System.out.println("La parola " + parolaUtente + " è palindroma");
-         }
-         else{
-             System.out.println("La parola " + parolaUtente + " non è palindroma");
-         }
+            for (int i = lettereInverso.length; i < lettereInverso.length; i--) {
+                if (lettereInverso[i] == lettere[i]) {
+                    IsThisPalindrome = true;
+                    break;
+                } else {
+                    IsThisPalindrome = false;
+                    break;
+                }
+            }
 
-         System.out.println(Arrays.toString(lettereInverso));
+            if (IsThisPalindrome) {
+                System.out.println("La parola " + parolaUtente + " è palindroma");
+            } else {
+                System.out.println("La parola " + parolaUtente + " non è palindroma");
+            }
+
+            System.out.println(Arrays.toString(lettereInverso));
 
         }
     }
+
+
+
+
+
+
 
