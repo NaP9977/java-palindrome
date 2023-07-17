@@ -23,30 +23,24 @@ public class Main {
             lettereInverso[j] = lettere[i];
         }
 
-            for (int i = lettereInverso.length; i < lettereInverso.length; i--) {
-                if (lettereInverso[i] == lettere[i]) {
-                    IsThisPalindrome = true;
-                    break;
-                } else {
-                    IsThisPalindrome = false;
-                    break;
-                }
+        for (int i = 0; i < lettereInverso.length; i++) {
+            if (lettereInverso[i] != lettere[i]) {
+                IsThisPalindrome = false;
+                break;
+            } else{
+                IsThisPalindrome = true;
             }
-
-            if (IsThisPalindrome) {
-                System.out.println("La parola " + parolaUtente + " è palindroma");
-            } else {
-                System.out.println("La parola " + parolaUtente + " non è palindroma");
-            }
-
-            System.out.println(Arrays.toString(lettereInverso));
-
         }
+
+        if (IsThisPalindrome) {
+            System.out.println("La parola " + parolaUtente + " è palindroma");
+        } else {
+            System.out.println("La parola " + parolaUtente + " non è palindroma");
+        }
+
+        System.out.println(Arrays.toString(lettereInverso));
+
     }
-
-
-
-
-
+}
 
 
